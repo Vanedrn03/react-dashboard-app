@@ -1,4 +1,4 @@
-import { Users, Key, LayoutDashboard } from 'lucide-react'
+import { Users, Key, LayoutDashboard, Film } from 'lucide-react'
 import React from 'react'
 import type { LucideProps } from 'lucide-react'
 import type { MenuItem, SubMenuItem } from '@/models/app/menu'
@@ -32,6 +32,39 @@ export const menu: MenuItem[] = [
     authorized: [roles.all],
     view: true,
     children: [],
+  },
+  {
+    key: RoutesEnum.CINE,
+    icon: createIcon(Film),
+    label: 'Cine',
+    authorized: [roles.all],
+    view: false,
+    children: [
+      {
+        key: RoutesEnum.CINE_CATALOGO,
+        label: 'Catálogo',
+        authorized: [roles.all],
+        view: true,
+      },
+      {
+        key: RoutesEnum.CINE_PELICULAS,
+        label: 'Películas',
+        authorized: [roles.all],
+        view: true,
+      },
+      {
+        key: RoutesEnum.CINE_SALAS,
+        label: 'Salas',
+        authorized: [roles.all],
+        view: true,
+      },
+      {
+        key: RoutesEnum.CINE_RESERVAS,
+        label: 'Reservas',
+        authorized: [roles.all],
+        view: true,
+      },
+    ],
   },
 ]
 
